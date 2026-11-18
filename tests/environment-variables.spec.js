@@ -1,11 +1,8 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
-test('@env-test Testing environment variables', async ({ page }) => {
-
-
-    console.log(`Username is: ${process.env.PRACTICE_USERNAME}`);
-    console.log(`Password is: ${process.env.PRACTICE_PASSWORD}`);
-
+test('@env-test Testing environment variables', async () => {
+    expect(process.env.PRACTICE_USERNAME).toBeTruthy();
+    expect(process.env.PRACTICE_PASSWORD).toBeTruthy();
 });
 
 
